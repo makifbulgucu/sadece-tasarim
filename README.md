@@ -1,4 +1,4 @@
-# tasarim
+# sadece-tasarim
 
 Bu repo, grafik tasarımcıların, freelance influencer'ların ve dijital pazarlamacıların iş akışlarını hızlandırmak için kurulmuştur.
 
@@ -26,14 +26,14 @@ Bu repo, grafik tasarımcıların, freelance influencer'ların ve dijital pazarl
 **1. Repoyu indirin**
 
 ```bash
-git clone https://github.com/makifbulgucu/tasarim.git
+git clone https://github.com/makifbulgucu/sadece-tasarim.git
 ```
 
 Git kullanmıyorsanız GitHub sayfasındaki **Code > Download ZIP** ile de indirebilirsiniz.
 
 **2. Skill'i Claude'a ekleyin**
 
-- **Claude Code:** `tasarim` klasörünü (içinde `SKILL.md` olan klasör) `~/.claude/skills/` altına kopyalayın. Sonuç: `~/.claude/skills/tasarim/SKILL.md`
+- **Claude Code:** İndirdiğiniz `sadece-tasarim` klasörünün içindeki `tasarim` klasörünü (içinde `SKILL.md` olan klasör) `~/.claude/skills/` altına kopyalayın. Sonuç: `~/.claude/skills/tasarim/SKILL.md`
 - **Claude uygulaması:** `tasarim` klasörünü zip'leyin ve Ayarlar'daki Skills bölümünden yükleyin.
 
 ## Nasıl kullanılır?
