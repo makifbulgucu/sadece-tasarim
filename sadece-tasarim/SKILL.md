@@ -1,5 +1,5 @@
 ---
-name: "tasarim"
+name: "sadece-tasarim"
 description: "Photoshop ve Illustrator'da profesyonel grafik tasarımcı gibi çalışma: Behance logo/marka referans analizi, story+post üretimi, ışık-renk düzeni, kontrol kullanıcıya bırakılır."
 ---
 

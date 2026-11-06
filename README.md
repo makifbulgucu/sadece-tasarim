@@ -4,7 +4,7 @@ Bu repo, grafik tasarımcıların, freelance influencer'ların ve dijital pazarl
 
 **Bu repo sizi hızlandırır, işinizi elinizden almaz.**
 
-`tasarim`, Claude'un Photoshop ve Illustrator'da profesyonel bir grafik tasarımcı gibi çalışmasını sağlayan bir skill'dir. Tekrarlanan kurulum işlerini (belge açma, görsel yerleştirme, renk eşitleme, ışık/vinyet/grain katmanları, story ve post formatları) Claude üstlenir; yaratıcı kararlar ve son dokunuş sizde kalır. Tüm dosyalar katmanlı teslim edilir, istediğiniz her şeyi elle değiştirebilirsiniz.
+`sadece-tasarim`, Claude'un Photoshop ve Illustrator'da profesyonel bir grafik tasarımcı gibi çalışmasını sağlayan bir skill'dir. Tekrarlanan kurulum işlerini (belge açma, görsel yerleştirme, renk eşitleme, ışık/vinyet/grain katmanları, story ve post formatları) Claude üstlenir; yaratıcı kararlar ve son dokunuş sizde kalır. Tüm dosyalar katmanlı teslim edilir, istediğiniz her şeyi elle değiştirebilirsiniz.
 
 ## Neler yapar?
 
@@ -33,8 +33,8 @@ Git kullanmıyorsanız GitHub sayfasındaki **Code > Download ZIP** ile de indir
 
 **2. Skill'i Claude'a ekleyin**
 
-- **Claude Code:** İndirdiğiniz `sadece-tasarim` klasörünün içindeki `tasarim` klasörünü (içinde `SKILL.md` olan klasör) `~/.claude/skills/` altına kopyalayın. Sonuç: `~/.claude/skills/tasarim/SKILL.md`
-- **Claude uygulaması:** `tasarim` klasörünü zip'leyin ve Ayarlar'daki Skills bölümünden yükleyin.
+- **Claude Code:** İndirdiğiniz reponun içindeki `sadece-tasarim` klasörünü (içinde `SKILL.md` olan klasör) `~/.claude/skills/` altına kopyalayın. Sonuç: `~/.claude/skills/sadece-tasarim/SKILL.md`
+- **Claude uygulaması:** İçinde `SKILL.md` olan `sadece-tasarim` klasörünü zip'leyin ve Ayarlar'daki Skills bölümünden yükleyin.
 
 ## Nasıl kullanılır?
 
@@ -51,7 +51,7 @@ Git kullanmıyorsanız GitHub sayfasındaki **Code > Download ZIP** ile de indir
 
 Eksik bir şey varsa Claude en makul varsayımla ilerler ve bunu size söyler; gerçekten kritikse tek bir kısa soru sorar.
 
-**2. Skill'i çağırın.** Sohbette `/tasarim` yazın ya da işi doğrudan anlatın:
+**2. Skill'i çağırın.** Sohbette `/sadece-tasarim` yazın ya da işi doğrudan anlatın:
 
 > 29 Ekim için story ve post hazırla. Görseller ve logo ekte. Başlık: "Cumhuriyet'in 103. Yılı", alt başlık: "Nice yıllara". Başlık fontu ITC Avant Garde Bold, alt başlık Comma Serif Italic.
 
