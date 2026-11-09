@@ -8,18 +8,22 @@ Bu repo, grafik tasarımcıların, freelance influencer'ların ve dijital pazarl
 
 ## Neler yapar?
 
-- Instagram **story (1080x1920)** ve **post (1080x1350)** tasarımlarını aynı tasarım dilinde, ayrı ayrı kompoze eder
-- Her format için katmanlı **.psd** ve önizleme **.png** üretir
-- Farklı kaynaklardan gelen görselleri tek bir renk dünyasında birleştirir (renk dengesi, kontrast, ışık, vinyet, grain)
-- Başlık, alt başlık ve logo hiyerarşisini kurar; yazının görseldeki önemli detaylarla çakışmamasına dikkat eder
+- Instagram **story (1080x1920)**, **post (1080x1350)** ve **carousel** tasarımlarını aynı tasarım dilinde, ayrı ayrı kompoze eder
+- Her format için katmanlı **.psd** ve önizleme **.png** üretir. Görseller akıllı nesne, renk düzeltmeleri ayar katmanı, metinler düzenlenebilir metin katmanı olarak kalır
+- Farklı kaynaklardan gelen görselleri tek bir renk dünyasında birleştirir (eğriler, renk dengesi, canlılık, ışık, vinyet, grain)
+- Başlık, alt başlık ve logo hiyerarşisini kurar; story ve post güvenli alanlarını korur
+- Fontları Türkçe karakterler için denetler (Ş, İ, ı, ğ eksik ya da bozuk fontu baştan yakalar)
 - Logo ve marka işlerinde Behance'ten 3-5 referansı analiz eder, kopyalamadan kendi özgün tasarımını üretir
-- Illustrator işlerinde vektör **.ai** ana dosya ve gerekirse .svg / .pdf / .png dışa aktarım hazırlar
+- Illustrator'da çoklu artboard, logo vektörleştirme (Image Trace) ve .ai / .svg / .pdf / .png dışa aktarım yapar
+- Açık belgelerinize ve orijinal dosyalarınıza dokunmaz
 
 ## Gereksinimler
 
-- Masaüstü kontrolü (computer use) açık olan **Claude** (Claude masaüstü uygulaması veya Claude Code)
-- **Adobe Photoshop** ve/veya **Adobe Illustrator** (skill, Windows + Photoshop 2026 Türkçe arayüzle hazırlandı)
+- **Claude Code** (Claude masaüstü uygulamasının Code sekmesi ya da terminal)
+- **Windows** + **Adobe Photoshop** ve/veya **Adobe Illustrator** (2026 ve 2027 sürümlerinde denendi)
 - Kullanacağınız fontların bilgisayarınızda veya Adobe Fonts'ta etkin olması
+
+Ekran kontrolü (computer use) **gerekmez**: Claude, Photoshop ve Illustrator'ı Windows'un COM arayüzüyle betik çalıştırarak yönetir. macOS için `run_jsx.sh` eklendi ama henüz denenmedi.
 
 ## Kurulum
 
@@ -33,8 +37,10 @@ Git kullanmıyorsanız GitHub sayfasındaki **Code > Download ZIP** ile de indir
 
 **2. Skill'i Claude'a ekleyin**
 
-- **Claude Code:** İndirdiğiniz reponun içindeki `sadece-tasarim` klasörünü (içinde `SKILL.md` olan klasör) `~/.claude/skills/` altına kopyalayın. Sonuç: `~/.claude/skills/sadece-tasarim/SKILL.md`
-- **Claude uygulaması:** İçinde `SKILL.md` olan `sadece-tasarim` klasörünü zip'leyin ve Ayarlar'daki Skills bölümünden yükleyin.
+- **Claude Code:** Reponun içindeki `sadece-tasarim` klasörünü (içinde `SKILL.md`, `scripts/`, `references/` olan klasör) `~/.claude/skills/` altına kopyalayın. Sonuç: `~/.claude/skills/sadece-tasarim/SKILL.md`
+- **Claude uygulaması:** `sadece-tasarim` klasörünü zip'leyin ve Ayarlar'daki Skills bölümünden yükleyin. Betikler bilgisayarınızdaki Photoshop'u çalıştırdığı için tam akış Claude Code'da çalışır.
+
+Skill'i güncellerken klasörün tamamını değiştirin; yalnızca `SKILL.md`'yi kopyalamak `scripts/` klasörünü eski bırakır.
 
 ## Nasıl kullanılır?
 
@@ -46,8 +52,8 @@ Git kullanmıyorsanız GitHub sayfasındaki **Code > Download ZIP** ile de indir
 | Başlık metni | Yazdığınız gibi kullanılır, büyük/küçük harf değişmez |
 | Alt başlık metni | Kısa açıklama veya slogan |
 | Başlık ve alt başlık fontu | Adobe Fonts'taki font adları |
-| Logo | Tercihen PNG; koyu ve açık sürüm varsa ikisi de |
-| Format | Story, post veya ikisi |
+| Logo | Tercihen şeffaf PNG; koyu ve açık sürüm varsa ikisi de |
+| Format | Story, post, carousel |
 
 Eksik bir şey varsa Claude en makul varsayımla ilerler ve bunu size söyler; gerçekten kritikse tek bir kısa soru sorar.
 
@@ -55,18 +61,49 @@ Eksik bir şey varsa Claude en makul varsayımla ilerler ve bunu size söyler; g
 
 > 29 Ekim için story ve post hazırla. Görseller ve logo ekte. Başlık: "Cumhuriyet'in 103. Yılı", alt başlık: "Nice yıllara". Başlık fontu ITC Avant Garde Bold, alt başlık Comma Serif Italic.
 
-**3. Claude'un çalışmasına izin verin.** Claude Photoshop'a ve Belgeler klasörünüze erişim ister, ardından:
+**3. Claude çalışır:**
 
 1. Kısa bir tasarım kararı verir (konsept, 2-3 ana renk, tipografik hiyerarşi)
-2. Font adlarını doğrular
-3. Tasarımı bir script ile Photoshop'ta katman katman kurar
-4. Önizlemeleri kendisi kontrol eder (yazı-görsel çakışması, logo okunurluğu, renk dengesi) ve gerekirse düzeltir
+2. Proje klasörünü kurar, dosyalarınızın kopyalarıyla çalışır
+3. Fontları denetler, Türkçe karakter sorununu baştan söyler
+4. Tasarımı bir betikle Photoshop'ta katman katman kurar
+5. Önizlemeleri kalite listesiyle kendisi kontrol eder (yazı-görsel çakışması, güvenli alan, logo okunurluğu, renk dengesi) ve gerekirse düzeltir
 
-**4. Son dokunuşu siz yapın.** Belgeler Photoshop'ta katmanlı ve açık bırakılır, kontrol size geçer. Başlık, alt başlık, logo, görseller, ışık, vinyet, gölge ve grain ayrı katmanlardadır; dilediğinizi kaydırın, değiştirin ya da kapatın.
+**4. Son dokunuşu siz yapın.** Belgeler Photoshop'ta açık ve katmanlı bırakılır. Görsel, Işık & Gölge, Metin ve Logo grupları ile en üstte Grain ayrıdır; dilediğinizi kaydırın, değiştirin ya da kapatın.
+
+## Klasör yapısı
+
+```
+sadece-tasarim/
+  SKILL.md                 Claude'un izlediği iş akışı ve kurallar
+  scripts/
+    lib.jsx                Photoshop yardımcı kütüphanesi (SD.*)
+    lib_ai.jsx             Illustrator yardımcı kütüphanesi (AI.*)
+    ornek_build.jsx        story + post örnek betiği (her işte buradan başlanır)
+    probe_fonts.jsx        font listesi + Türkçe karakter örnek görseli
+    run_jsx.ps1            Windows: betiği COM ile çalıştırır, Türkçe metni korur
+    run_jsx.sh             macOS: osascript ile çalıştırır (denenmedi)
+  references/
+    tuzaklar.md            karşılaşılan hatalar ve çözümleri
+```
+
+Betikleri elle de çalıştırabilirsiniz:
+
+```bash
+powershell -NoProfile -ExecutionPolicy Bypass -File sadece-tasarim\scripts\run_jsx.ps1 -Script "C:\Proje\_script\build.jsx"
+```
 
 ## İpuçları
 
 - Düşük çözünürlüklü görseller gereksiz büyütülmez. Büyütme gerekirse Claude bunu açıkça söyler.
 - Görselde başka birinin filigranı veya imzası varsa Claude sizi uyarır (kredi gerekebilir).
-- `SKILL.md` içindeki menü koordinatları ve font adları belirli bir kuruluma göredir. Farklı ekran çözünürlüğü, dil veya Photoshop sürümünde Claude ilk seferde ekran görüntüsüyle doğrulama yapar; dilerseniz bu değerleri kendi ortamınıza göre güncelleyin.
+- Teslimden sonra PSD'yi elle düzenlediyseniz Claude yeniden kurmadan önce sorar ve eski dosyayı `psd/_yedek/` altına alır.
 - Skill'i kendi marka kurallarınıza göre düzenleyebilirsiniz: favori font çiftleriniz, renk paletleriniz veya teslim formatlarınız için `SKILL.md` dosyasını değiştirmeniz yeterli.
+
+## Sürümler
+
+Değişiklikler için [CHANGELOG.md](CHANGELOG.md) dosyasına bakın.
+
+## Lisans
+
+[MIT](LICENSE)
