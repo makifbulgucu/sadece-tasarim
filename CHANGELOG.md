@@ -1,5 +1,18 @@
 # Değişiklikler
 
+## 2.1.0 (2026-11-10)
+
+brand-identity skill'inin (Fatih Aydost, MIT) özellikleri sadece-tasarim'e bağlandı.
+
+**Yeni**
+- Marka kimliği modu (SKILL.md 2b, `references/marka-kimligi.md`): logo + font + palet tek mekanizmadan, ölçülen kapılar, seçimi kullanıcıya bırakan pano, PDF kılavuz, eleştiri modu ve Türkçe eleştiri şablonu.
+- `scripts/marka_aktar.py`: brand-identity kitini proje klasörüne aktarır; `marka_veri.jsx` (`MARKA` nesnesi) yazar, fontların kurulu olup olmadığını söyler, onayla Google fontlarını kullanıcı kapsamında kurar (`--font-kur`).
+- `scripts/marka_ai.jsx`: kitten Illustrator marka dosyası (her logo sürümü ayrı artboard'da düzenlenebilir vektör, renk paneli, marka renk örnek grubu, 16/32/64 px testleri).
+- `lib_ai.jsx`: `AI.importSVG`, `AI.swatchGroup`, `AI.smallTest`, `AI.fontOr`.
+- `scripts/kontrast.py`: WCAG 2.2 kontrast ölçümü; renk çiftleri ve PNG üstündeki yazı alanı (medyan, en kötü %10).
+- Zihniyet: yapay zekâ klişesi refleks testi, "ölç, sonra iddia et"; Behance analizine rakip ölçütü ve kaynaklar (Fonts In Use, Brand New).
+- Kalite kontrol listesine ölçülmüş kontrast, Türkçe font denetimi, kılavuza uyum ve refleks testi eklendi.
+
 ## 2.0.0 (2026-11-09)
 
 Skill baştan düzenlendi; tek dosyalık talimattan, denenmiş betiklerle gelen bir pakete dönüştü.

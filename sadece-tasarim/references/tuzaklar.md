@@ -44,6 +44,15 @@ Gerçek işlerde karşılaşılan sorunlar. Bir hata alınca önce buraya bak.
 - Koordinatlar: `AI.pt` artboard'un sol-üst köşesine göre, y aşağı doğru çevirir. `pathItems.rectangle(top, left, w, h)` doğrudan kullanılırsa y ekseni ters.
 - `doc.saveAs(PDF)` belgeyi PDF dosyasına bağlar. Önce PDF/SVG dışa aktar, **en son** `AI.saveAI` ile .ai kaydet.
 - Dışa aktarma kopyasında metni outline'a çevir (`AI.outlineAll`), ana .ai dosyasında metin düzenlenebilir kalsın.
+- SVG logo `placedItems` ile yerleştirilirse bağlı/gömülü dosya olur, içi düzenlenmez. `groupItems.createFromFile` (`AI.importSVG`) vektör grup olarak alır. brand-identity SVG'lerinde zeminli sürümler (`on-dark-background` vb.) kendi zemin dikdörtgenini taşır; logoyu tek başına taşımak için grubun içindeki `ground` yolunu sil.
+- Küçük boyut testini artboard'un tamamıyla yapma: boş alan logoyu küçültür, test yanıltır. `AI.smallTest` logonun kendi sınırlarına geçici artboard açar.
+
+## Marka kimliği (brand-identity)
+
+- `brand.py build WORK` için `WORK/sets.json` gerekir (`init` taslağı açar); skill'in kendi akışını izle, elle klasör kurma.
+- Google fontları brand-identity önbelleğindedir (`~/.cache/brand-identity/fonts/google/...`) ama Windows'a **kurulu değildir**. Photoshop/Illustrator'da kullanmak için `marka_aktar.py --font-kur` (kullanıcı onayıyla) ve uygulamayı yeniden başlat; PostScript adını `probe_fonts.jsx` ile al (değişken fontta adlandırılmış örnekler: `Outfit-Bold` gibi).
+- `fonts audit` sistem fontunda (Arial vb.) lisans kapısını "bilinmiyor" diye kaldırır; bu bir hata değil, logo kullanımı için lisansı doğrulama uyarısıdır.
+- `kontrast.py --png` şeffaf PNG'de alfa kanalını yok sayar; Photoshop'un opak PNG'siyle ölç. Kutu yazının arkasındaki zemini kapsasın; harfleri kapsarsa oran düşük çıkar.
 
 ## Windows / ortam
 

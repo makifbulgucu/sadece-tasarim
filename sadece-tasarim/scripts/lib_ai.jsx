@@ -109,6 +109,54 @@ var AI = AI || {};
     app.redraw();
     return pi.tracing.expandTracing();
   };
+  // ---- marka kimligi (brand-identity koprusu) ----
+  // Ilk bulunan fontu dondurur (PostScript ya da tam ad); hicbiri yoksa son yedek "ArialMT".
+  AI.fontOr = function (names) {
+    for (var i = 0; i < names.length; i++) { if (!names[i]) continue; try { app.textFonts.getByName(names[i]); return names[i]; } catch (e) {} }
+    return "ArialMT";
+  };
+  // SVG'yi duzenlenebilir vektor grup olarak al (placedItem degil). o = {w, h, cx, cy, name} artboard'a gore.
+  AI.importSVG = function (doc, i, path, o, layer) {
+    var f = new File(path);
+    if (!f.exists) throw new Error("Dosya yok: " + path);
+    var c = layer || doc.activeLayer;
+    var g = c.groupItems.createFromFile(f);
+    o = o || {};
+    var s = 1;
+    if (o.w && o.h) s = Math.min(o.w / g.width, o.h / g.height);
+    else if (o.w) s = o.w / g.width;
+    else if (o.h) s = o.h / g.height;
+    if (s != 1) g.resize(s * 100, s * 100, true, true, true, true, s * 100, Transformation.CENTER);
+    if (o.cx != null) g.position = AI.pt(doc, i, o.cx - g.width / 2, o.cy - g.height / 2);
+    if (o.name) g.name = o.name;
+    return g;
+  };
+  // Renk ornegi grubu: colors = [{ad, hex}]. Ayni adli ornek varsa yeniden kullanir.
+  AI.swatchGroup = function (doc, name, colors) {
+    var sg; try { sg = doc.swatchGroups.getByName(name); } catch (e) { sg = doc.swatchGroups.add(); sg.name = name; }
+    for (var i = 0; i < colors.length; i++) {
+      var sw; try { sw = doc.swatches.getByName(colors[i].ad); } catch (e2) { sw = doc.swatches.add(); sw.name = colors[i].ad; }
+      sw.color = AI.rgb(colors[i].hex);
+      try { sg.addSwatch(sw); } catch (e3) {}
+    }
+    return sg;
+  };
+  // Kucuk boyut testi: item'in sinirlarina gecici artboard acar, verilen yuksekliklerde (px) PNG'ye aktarir
+  // (<dir>/<ad>-<px>.png), artboard'u siler. Sonuclari GOZLE kontrol et: delik tikaniyor mu, ince cizgi kayboluyor mu.
+  AI.smallTest = function (doc, item, dir, name, sizes) {
+    new Folder(dir).create();
+    var b = item.visibleBounds; // [sol, ust, sag, alt]
+    var ab = doc.artboards.add(b), idx = doc.artboards.length - 1, h = b[1] - b[3], out = [];
+    sizes = sizes || [16, 32, 64];
+    try {
+      for (var k = 0; k < sizes.length; k++) {
+        var p = dir + "/" + name + "-" + sizes[k] + ".png";
+        AI.exportPNG(doc, idx, p, sizes[k] / h * 100); out.push(p);
+      }
+    } finally { ab.remove(); }
+    return out;
+  };
+
   // Disa aktarma kopyasi icin tum metinleri outline'a cevir (asil .ai'de metin duzenlenebilir kalsin!)
   AI.outlineAll = function (doc) { for (var i = doc.textFrames.length - 1; i >= 0; i--) doc.textFrames[i].createOutline(); };
 
