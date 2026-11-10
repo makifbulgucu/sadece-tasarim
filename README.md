@@ -22,6 +22,27 @@ Bu repo, grafik tasarımcıların, freelance influencer'ların ve dijital pazarl
 - Illustrator'da çoklu artboard, logo vektörleştirme (Image Trace) ve .ai / .svg / .pdf / .png dışa aktarım yapar
 - Açık belgelerinize ve orijinal dosyalarınıza dokunmaz
 
+## Referans görseller
+
+**Sadece Medya** marka kimliği ve mockup çalışması: geometrik küçük harf logo, turuncu kare nokta, beş renklik palet (`#EA572C`, `#0B0B0B`, `#EFEEEC`, `#1B2A41`, `#E5DCCB`) ve Poppins. Kimlik tek bir fikirden kurulup kartvizitten tabelaya, Instagram profilinden promosyon ürünlerine aynı dille taşındı.
+
+![Sadece Medya marka panosu](referans-gorseller/sadece-medya/00-marka-panosu.jpg)
+
+| | |
+|---|---|
+| ![Siyah kartvizit](referans-gorseller/sadece-medya/01-kartvizit-siyah.jpg) | ![Turuncu kartvizit](referans-gorseller/sadece-medya/02-kartvizit-turuncu.jpg) |
+| Kartvizit, siyah | Kartvizit, turuncu |
+| ![Zarf](referans-gorseller/sadece-medya/03-zarf.jpg) | ![Instagram profili](referans-gorseller/sadece-medya/04-instagram-profil.jpg) |
+| Zarf | Instagram profili ve grid |
+| ![Kutu tabela](referans-gorseller/sadece-medya/05-tabela-kutu.jpg) | ![Cephe tabelası](referans-gorseller/sadece-medya/06-tabela-cephe.jpg) |
+| Kutu tabela | Cephe tabelası |
+| ![Yönlendirme panosu](referans-gorseller/sadece-medya/07-yonlendirme-panosu.jpg) | ![Bez çanta](referans-gorseller/sadece-medya/08-bez-canta.jpg) |
+| Yönlendirme panosu | Bez çanta |
+| ![Kupalar](referans-gorseller/sadece-medya/09-kupalar.jpg) | ![Tişört](referans-gorseller/sadece-medya/10-tisort.jpg) |
+| Kupa | Tişört |
+
+Görsellerdeki iletişim bilgileri örnek yer tutucudur.
+
 ## Gereksinimler
 
 - **Claude Code** (Claude masaüstü uygulamasının Code sekmesi ya da terminal)
@@ -95,6 +116,7 @@ sadece-tasarim/
   references/
     tuzaklar.md            karşılaşılan hatalar ve çözümleri
     marka-kimligi.md       logo/marka akışı, tasarım ilkeleri, ölçüm araçları, eleştiri şablonu
+referans-gorseller/        README'deki örnek çalışmalar (skill klasörüne kopyalanmaz)
 ```
 
 Betikleri elle de çalıştırabilirsiniz:
