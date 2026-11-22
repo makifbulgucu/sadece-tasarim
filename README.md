@@ -22,6 +22,10 @@ Bu repo, grafik tasarımcıların, freelance influencer'ların ve dijital pazarl
 - Illustrator'da çoklu artboard, logo vektörleştirme (Image Trace) ve .ai / .svg / .pdf / .png dışa aktarım yapar
 - Açık belgelerinize ve orijinal dosyalarınıza dokunmaz
 
+## Spor editoryali ve Photoshop betiği
+
+[Claude çalışma rehberi](sadece-tasarim/references/claude-tasarim-rehberi.md), spor hesabı analizlerini, örnek kullanım istemini ve [Photoshop betiğini](sadece-tasarim/scripts/claude-spor-editoriyal.jsx) bir araya getirir. Betik yedi fotoğraf düzenini post, story veya carousel sayfası olarak kurar.
+
 ## Referans görseller
 
 **Sadece Medya** marka kimliği ve mockup çalışması: geometrik küçük harf logo, turuncu kare nokta, beş renklik palet (`#EA572C`, `#0B0B0B`, `#EFEEEC`, `#1B2A41`, `#E5DCCB`) ve Poppins. Kimlik tek bir fikirden kurulup kartvizitten tabelaya, Instagram profilinden promosyon ürünlerine aynı dille taşındı.
