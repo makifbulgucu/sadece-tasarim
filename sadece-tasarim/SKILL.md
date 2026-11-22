@@ -1,6 +1,6 @@
 ---
 name: sadece-tasarim
-description: "Photoshop ve Illustrator'da profesyonel grafik tasarımcı gibi çalışır: Instagram story (1080x1920), post (1080x1350), carousel, afiş, davetiye, özel gün paylaşımı, logo ve marka kimliği işlerini betikle (COM + ExtendScript) katmanlı PSD/AI olarak kurar. Marka işinde brand-identity ile logo, font ve paleti birlikte kurar, ölçer (kontrast, renk körlüğü, Türkçe glif, font lisansı, 16 px logo) ve seçilen kimliği düzenlenebilir Illustrator marka dosyasına ve şablonlara taşır; mevcut kimliği eleştirir. Behance/rakip analizi, klişe denetimi, tek renk dünyası, ışık-gölge-grain ve ölçümlü kalite kontrolü yapar; dosyaları açık ve düzenlenebilir bırakır. Kullanıcı 'story yap', 'post hazırla', 'PSD hazırla', 'Illustrator'da çiz', 'logo tasarla', 'marka kimliği', 'kurumsal kimlik', 'marka kılavuzu', 'markamı eleştir', 'carousel', 'afiş' dediğinde ya da görsel + başlık + logo verip sosyal medya tasarımı istediğinde kullan. Video/Reels, web sayfası ve HTML animasyon için kullanma."
+description: "Photoshop ve Illustrator'da profesyonel grafik tasarımcı gibi çalışır: Instagram story (1080x1920), post (1080x1350), carousel, afiş, davetiye, özel gün paylaşımı, logo ve marka kimliği işlerini betikle (COM + ExtendScript) katmanlı PSD/AI olarak kurar. Marka işinde brand-identity ile logo, font ve paleti birlikte kurar, ölçer (kontrast, renk körlüğü, Türkçe glif, font lisansı, 16 px logo) ve seçilen kimliği düzenlenebilir Illustrator marka dosyasına ve şablonlara taşır; mevcut kimliği eleştirir. Behance/rakip analizi, klişe denetimi, tek renk dünyası, ışık-gölge-grain ve ölçümlü kalite kontrolü yapar; dosyaları açık ve düzenlenebilir bırakır. Kullanıcı 'story yap', 'post hazırla', 'PSD hazırla', 'Illustrator'da çiz', 'maç günü', 'ilk 11', 'skor', 'spor editoryali', 'logo tasarla', 'marka kimliği', 'kurumsal kimlik', 'marka kılavuzu', 'markamı eleştir', 'carousel', 'afiş' dediğinde ya da görsel + başlık + logo verip sosyal medya tasarımı istediğinde kullan. Video/Reels, web sayfası ve HTML animasyon için kullanma."
 ---
 
 # sadece-tasarim: Photoshop / Illustrator tasarım iş akışı
@@ -29,6 +29,14 @@ Skill klasörü (bu dosyanın yanı): `scripts/` hazır kod, `references/tuzakla
 3. Kullanıcıya kısa özet ver: hangi eğilimleri çıkardın, neyi neden seçtin. Sonra **özgün** tasarım üret. Tek işi kopyalama, başkasının logosunu/markasını taklit etme; yalnızca ilke ve eğilim al.
 4. Marka işlerinde sistem düşün: ana logo, sembol, yatay/dikey kullanım, tek renk sürüm, koruma alanı, renk ve font tanımı.
 5. Behance bugünkü "kılavuz şablonu" görünümünün (bej kâğıt, dev "Aa", köşeli bölüm numaraları) kaynağıdır; bilerek ve markanın kendi renk/fontuyla kullan. Logo ve marka işinde asıl ölçüt kullanıcının **gerçek rakipleridir**: neyin klişe olduğunu ve setin nerede ayrıştığını onlara göre söyle. Font emsali için Fonts In Use, yenileme emsali için Brand New daha iyi kaynaktır.
+
+## Futbol ve spor editoryali
+
+Maç günü, ilk 11, skor, transfer, forma lansmanı veya ajans portföyü için [futbol ve ajans tasarımlarını](references/futbol-ve-ajans-tasarimlari.md) incele. Oyuncu istatistiği, kültür afişi, röportaj kapağı ve arşiv kolajında [De Marke Garage, Mantra ve Socrates Dergi örneklerinden](references/spor-yayinlarinin-tasarim-dilleri.md) brife uygun yaklaşımı seç.
+
+Fotoğraf merkezli spor editoryali, arşiv kolajı veya oyuncu carousel’i için [02archives teknik rehberini](references/02archives-tasarim-teknikleri.md) oku. Fotoğraf seçimini, kadraj sırasını ve yazı hiyerarşisini brife göre belirle.
+
+Katmanlı Photoshop postu, story’si veya carousel’i için [Claude çalışma rehberini](references/claude-tasarim-rehberi.md) ve [spor editoryali betiğini](scripts/claude-spor-editoriyal.jsx) kullan. Birden fazla çıktı için betikteki `JOBS` dizisini doldur. Skor, ilk 11 ve logo katmanlarını brife göre ekle.
 
 ## 2b. Marka kimliği modu (logo + font + palet, brand-identity ile)
 
